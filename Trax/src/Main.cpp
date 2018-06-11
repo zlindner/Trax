@@ -6,4 +6,6 @@
 //  Copyright © 2018 Zach Lindner. All rights reserved.
 //
 
-#include "Trax.hpp"
+int main(int argc, const char *argv[]) {
+    return 0;
+}
