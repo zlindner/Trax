@@ -11,6 +11,10 @@
 		A094329C20CED3C20013670F /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A094329B20CED3C20013670F /* SDL2.framework */; };
 		A094329E20CED3D10013670F /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A094329D20CED3D10013670F /* SDL2_image.framework */; };
 		A09432A120CED5510013670F /* Trax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A094329F20CED5510013670F /* Trax.cpp */; };
+		A09432BF20CEF6B80013670F /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A09432BD20CEF6B80013670F /* Entity.cpp */; };
+		A09432C220CEF6BF0013670F /* Manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A09432C020CEF6BF0013670F /* Manager.cpp */; };
+		A09432C520CEFE5B0013670F /* ECS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A09432C320CEFE5B0013670F /* ECS.cpp */; };
+		A09432C920CF00380013670F /* Keyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A09432C720CF00380013670F /* Keyboard.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +37,15 @@
 		A094329F20CED5510013670F /* Trax.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Trax.cpp; sourceTree = "<group>"; };
 		A09432A020CED5510013670F /* Trax.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Trax.hpp; sourceTree = "<group>"; };
 		A09432A220CED6030013670F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		A09432BB20CEF6AF0013670F /* Component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Component.hpp; sourceTree = "<group>"; };
+		A09432BD20CEF6B80013670F /* Entity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
+		A09432BE20CEF6B80013670F /* Entity.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Entity.hpp; sourceTree = "<group>"; };
+		A09432C020CEF6BF0013670F /* Manager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Manager.cpp; sourceTree = "<group>"; };
+		A09432C120CEF6BF0013670F /* Manager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Manager.hpp; sourceTree = "<group>"; };
+		A09432C320CEFE5B0013670F /* ECS.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ECS.cpp; sourceTree = "<group>"; };
+		A09432C420CEFE5B0013670F /* ECS.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ECS.hpp; sourceTree = "<group>"; };
+		A09432C720CF00380013670F /* Keyboard.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Keyboard.cpp; sourceTree = "<group>"; };
+		A09432C820CF00380013670F /* Keyboard.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Keyboard.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +91,7 @@
 		A094329620CED3930013670F /* src */ = {
 			isa = PBXGroup;
 			children = (
+				A09432B920CEF6470013670F /* ecs */,
 				A094329820CED3A30013670F /* Main.cpp */,
 				A094329F20CED5510013670F /* Trax.cpp */,
 				A09432A020CED5510013670F /* Trax.hpp */,
@@ -99,6 +113,30 @@
 				A094329B20CED3C20013670F /* SDL2.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A09432B920CEF6470013670F /* ecs */ = {
+			isa = PBXGroup;
+			children = (
+				A09432C620CF002C0013670F /* components */,
+				A09432BB20CEF6AF0013670F /* Component.hpp */,
+				A09432BD20CEF6B80013670F /* Entity.cpp */,
+				A09432BE20CEF6B80013670F /* Entity.hpp */,
+				A09432C020CEF6BF0013670F /* Manager.cpp */,
+				A09432C120CEF6BF0013670F /* Manager.hpp */,
+				A09432C320CEFE5B0013670F /* ECS.cpp */,
+				A09432C420CEFE5B0013670F /* ECS.hpp */,
+			);
+			path = ecs;
+			sourceTree = "<group>";
+		};
+		A09432C620CF002C0013670F /* components */ = {
+			isa = PBXGroup;
+			children = (
+				A09432C720CF00380013670F /* Keyboard.cpp */,
+				A09432C820CF00380013670F /* Keyboard.hpp */,
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,7 +195,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A09432C920CF00380013670F /* Keyboard.cpp in Sources */,
+				A09432BF20CEF6B80013670F /* Entity.cpp in Sources */,
 				A09432A120CED5510013670F /* Trax.cpp in Sources */,
+				A09432C220CEF6BF0013670F /* Manager.cpp in Sources */,
+				A09432C520CEFE5B0013670F /* ECS.cpp in Sources */,
 				A094329920CED3A30013670F /* Main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

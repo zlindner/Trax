@@ -7,11 +7,27 @@
 //
 
 #include "Trax.hpp"
+#include "Manager.hpp"
+#include "Entity.hpp"
+#include "Component.hpp"
+#include "Keyboard.hpp"
 
 SDL_Renderer *Trax::renderer;
 SDL_Event Trax::event;
 
+Manager manager;
+
+auto &player(manager.add_entity());
+
 Trax::Trax() {
+    
+}
+
+Trax::~Trax() {
+    
+}
+
+void Trax::init() {
     if (SDL_Init(SDL_INIT_EVERYTHING) == 0) {
         window = SDL_CreateWindow("Trax", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, 0);
         
@@ -25,14 +41,8 @@ Trax::Trax() {
     } else {
         is_running = false;
     }
-}
-
-Trax::~Trax() {
     
-}
-
-void Trax::init() {
-    
+    //player.add_component<Keyboard>();
 }
 
 void Trax::events() {
@@ -48,7 +58,8 @@ void Trax::events() {
 }
 
 void Trax::update() {
-    
+    manager.refresh();
+    manager.update();
 }
 
 void Trax::render() {
