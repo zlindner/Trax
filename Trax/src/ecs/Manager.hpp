@@ -24,6 +24,9 @@ public:
     
     Entity &add_entity();
     
+    void add_to_group(Entity *e, std::size_t g);
+    std::vector<Entity *> &get_group(std::size_t g);
+    
 private:
     std::vector<std::unique_ptr<Entity>> entities;
     std::array<std::vector<Entity *>, 32> grouped_entities;

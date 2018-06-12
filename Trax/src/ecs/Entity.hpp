@@ -30,6 +30,10 @@ public:
     void destroy();
     bool is_active();
     
+    bool has_group(std::size_t g);
+    void add_group(std::size_t g);
+    void delete_group(std::size_t g);
+    
     template <typename T>
     bool has_component() {
         return component_bitset[get_component_type_id<T>()];

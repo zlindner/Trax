@@ -28,6 +28,18 @@ auto &tile(manager.add_entity());
 
 std::vector<Collider *> Trax::colliders;
 
+enum groups : std::size_t {
+    GROUP_MAP,
+    GROUP_PLAYER,
+    GROUP_ENEMY,
+    GROUP_COLLIDER
+};
+
+auto &tiles(manager.get_group(GROUP_MAP));
+auto &players(manager.get_group(GROUP_PLAYER));
+auto &enemies(manager.get_group(GROUP_ENEMY));
+auto &colliders(manager.get_group(GROUP_COLLIDER));
+
 Trax::Trax() {
     
 }
@@ -57,10 +69,12 @@ void Trax::init() {
     player.add_component<Sprite>("assets/tank.png");
     player.add_component<Keyboard>();
     player.add_component<Collider>("player");
+    player.add_group(GROUP_PLAYER);
     
     tile.add_component<Transform>(300, 300, 300, 32, 1);
     tile.add_component<Sprite>("assets/sand.png");
     tile.add_component<Collider>("floor");
+    tile.add_group(GROUP_MAP);
 }
 
 void Trax::events() {
@@ -89,8 +103,17 @@ void Trax::update() {
 void Trax::render() {
     SDL_RenderClear(renderer);
     
-    //TODO grouping
-    manager.draw();
+    for (auto &t : tiles) {
+        t->draw();
+    }
+    
+    for (auto &p : players) {
+        p->draw();
+    }
+    
+    for (auto &e : enemies) {
+        e->draw();
+    }
     
     SDL_RenderPresent(renderer);
 }
@@ -108,4 +131,5 @@ bool Trax::running() {
 void Trax::add_tile(int id, int x, int y) {
     auto &tile(manager.add_entity());
     tile.add_component<Tile>(x, y, 32, 32, id);
+    tile.add_group(GROUP_MAP);
 }
