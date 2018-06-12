@@ -13,6 +13,8 @@
 #include "Keyboard.hpp"
 #include "Sprite.hpp"
 #include "Transform.hpp"
+#include "Collider.hpp"
+#include "Collision.hpp"
 
 SDL_Renderer *Trax::renderer;
 SDL_Event Trax::event;
@@ -20,6 +22,9 @@ SDL_Event Trax::event;
 Manager manager;
 
 auto &player(manager.add_entity());
+auto &tile(manager.add_entity());
+
+std::vector<Collider *> Trax::colliders;
 
 Trax::Trax() {
     
@@ -47,6 +52,12 @@ void Trax::init() {
     player.add_component<Transform>(2);
     player.add_component<Sprite>("assets/tank.png");
     player.add_component<Keyboard>();
+    player.add_component<Collider>("player");
+    
+    tile.add_component<Transform>(300, 300, 300, 32, 1);
+    tile.add_component<Sprite>("assets/sand.png");
+    tile.add_component<Collider>("floor");
+    
 }
 
 void Trax::events() {
@@ -66,6 +77,11 @@ void Trax::update() {
     manager.update();
     
     //TODO update colliders
+    for (auto c : colliders) {
+        if (Collision::AABB(player.get_component<Collider>(), *c)) {
+            
+        }
+    }
 }
 
 void Trax::render() {

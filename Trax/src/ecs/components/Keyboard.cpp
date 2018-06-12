@@ -18,6 +18,7 @@ void Keyboard::init() {
     sprite = &entity->get_component<Sprite>();
 }
 
+//TODO rotate with 'a' and 'd', move forward in direction with 'w' and backward with 's'
 void Keyboard::update() {
     if (Trax::event.type == SDL_KEYDOWN) {
         switch(Trax::event.key.keysym.sym) {

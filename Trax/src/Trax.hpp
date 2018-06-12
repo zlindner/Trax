@@ -11,12 +11,16 @@
 
 #include <SDL2/SDL.h>
 #include <SDL2_image/SDL_image.h>
+#include <vector>
+#include "Collider.hpp"
 
 class Trax {
 
 public:
     static SDL_Renderer *renderer;
     static SDL_Event event;
+    
+    static std::vector<Collider *> colliders;
     
     Trax();
     ~Trax();

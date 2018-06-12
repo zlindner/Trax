@@ -19,6 +19,8 @@
 		A0F928DA20D008680032B476 /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0F928D820D008680032B476 /* Transform.cpp */; };
 		A0F928DD20D008890032B476 /* Vector2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0F928DB20D008890032B476 /* Vector2D.cpp */; };
 		A0F928E020D00A820032B476 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0F928DE20D00A820032B476 /* Animation.cpp */; };
+		A0F928E320D015BB0032B476 /* Collider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0F928E120D015BB0032B476 /* Collider.cpp */; };
+		A0F928E620D017880032B476 /* Collision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0F928E420D017880032B476 /* Collision.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,6 +61,10 @@
 		A0F928DC20D008890032B476 /* Vector2D.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vector2D.hpp; sourceTree = "<group>"; };
 		A0F928DE20D00A820032B476 /* Animation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
 		A0F928DF20D00A820032B476 /* Animation.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Animation.hpp; sourceTree = "<group>"; };
+		A0F928E120D015BB0032B476 /* Collider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Collider.cpp; sourceTree = "<group>"; };
+		A0F928E220D015BB0032B476 /* Collider.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Collider.hpp; sourceTree = "<group>"; };
+		A0F928E420D017880032B476 /* Collision.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Collision.cpp; sourceTree = "<group>"; };
+		A0F928E520D017880032B476 /* Collision.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Collision.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +120,8 @@
 				A0F928DC20D008890032B476 /* Vector2D.hpp */,
 				A0F928DE20D00A820032B476 /* Animation.cpp */,
 				A0F928DF20D00A820032B476 /* Animation.hpp */,
+				A0F928E420D017880032B476 /* Collision.cpp */,
+				A0F928E520D017880032B476 /* Collision.hpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -157,6 +165,8 @@
 				A0F928D320D0039D0032B476 /* Sprite.hpp */,
 				A0F928D820D008680032B476 /* Transform.cpp */,
 				A0F928D920D008680032B476 /* Transform.hpp */,
+				A0F928E120D015BB0032B476 /* Collider.cpp */,
+				A0F928E220D015BB0032B476 /* Collider.hpp */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -222,10 +232,12 @@
 				A09432BF20CEF6B80013670F /* Entity.cpp in Sources */,
 				A09432A120CED5510013670F /* Trax.cpp in Sources */,
 				A09432C220CEF6BF0013670F /* Manager.cpp in Sources */,
+				A0F928E320D015BB0032B476 /* Collider.cpp in Sources */,
 				A0F928D420D0039D0032B476 /* Sprite.cpp in Sources */,
 				A094329920CED3A30013670F /* Main.cpp in Sources */,
 				A0F928DD20D008890032B476 /* Vector2D.cpp in Sources */,
 				A0F928D720D0051A0032B476 /* TextureManager.cpp in Sources */,
+				A0F928E620D017880032B476 /* Collision.cpp in Sources */,
 				A0F928E020D00A820032B476 /* Animation.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
