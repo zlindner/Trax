@@ -33,6 +33,8 @@ public:
     
     bool running();
     
+    static void add_tile(int id, int x, int y);
+    
 private:
     SDL_Window *window;
     
