@@ -13,7 +13,6 @@
 		A09432A120CED5510013670F /* Trax.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A094329F20CED5510013670F /* Trax.cpp */; };
 		A09432BF20CEF6B80013670F /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A09432BD20CEF6B80013670F /* Entity.cpp */; };
 		A09432C220CEF6BF0013670F /* Manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A09432C020CEF6BF0013670F /* Manager.cpp */; };
-		A09432C520CEFE5B0013670F /* ECS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A09432C320CEFE5B0013670F /* ECS.cpp */; };
 		A09432C920CF00380013670F /* Keyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A09432C720CF00380013670F /* Keyboard.cpp */; };
 		A0F928D420D0039D0032B476 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0F928D220D0039D0032B476 /* Sprite.cpp */; };
 		A0F928D720D0051A0032B476 /* TextureManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0F928D520D0051A0032B476 /* TextureManager.cpp */; };
@@ -47,7 +46,6 @@
 		A09432BE20CEF6B80013670F /* Entity.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Entity.hpp; sourceTree = "<group>"; };
 		A09432C020CEF6BF0013670F /* Manager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Manager.cpp; sourceTree = "<group>"; };
 		A09432C120CEF6BF0013670F /* Manager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Manager.hpp; sourceTree = "<group>"; };
-		A09432C320CEFE5B0013670F /* ECS.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ECS.cpp; sourceTree = "<group>"; };
 		A09432C420CEFE5B0013670F /* ECS.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ECS.hpp; sourceTree = "<group>"; };
 		A09432C720CF00380013670F /* Keyboard.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Keyboard.cpp; sourceTree = "<group>"; };
 		A09432C820CF00380013670F /* Keyboard.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Keyboard.hpp; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 				A09432BE20CEF6B80013670F /* Entity.hpp */,
 				A09432C020CEF6BF0013670F /* Manager.cpp */,
 				A09432C120CEF6BF0013670F /* Manager.hpp */,
-				A09432C320CEFE5B0013670F /* ECS.cpp */,
 				A09432C420CEFE5B0013670F /* ECS.hpp */,
 			);
 			path = ecs;
@@ -225,7 +222,6 @@
 				A09432BF20CEF6B80013670F /* Entity.cpp in Sources */,
 				A09432A120CED5510013670F /* Trax.cpp in Sources */,
 				A09432C220CEF6BF0013670F /* Manager.cpp in Sources */,
-				A09432C520CEFE5B0013670F /* ECS.cpp in Sources */,
 				A0F928D420D0039D0032B476 /* Sprite.cpp in Sources */,
 				A094329920CED3A30013670F /* Main.cpp in Sources */,
 				A0F928DD20D008890032B476 /* Vector2D.cpp in Sources */,

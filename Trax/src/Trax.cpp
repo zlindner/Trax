@@ -46,6 +46,7 @@ void Trax::init() {
     
     player.add_component<Transform>(2);
     player.add_component<Sprite>("assets/tank.png");
+    player.add_component<Keyboard>();
 }
 
 void Trax::events() {

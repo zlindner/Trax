@@ -24,6 +24,7 @@ public:
     std::map<std::string, Animation> animations;
     
     SDL_RendererFlip flip = SDL_FLIP_NONE;
+    double angle = 0.0;
     
     Sprite() = default;
     

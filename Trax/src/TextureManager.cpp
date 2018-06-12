@@ -22,3 +22,7 @@ SDL_Texture *TextureManager::load_texture(std::string filename) {
 void TextureManager::draw(SDL_Texture *texture, SDL_Rect source, SDL_Rect dest, SDL_RendererFlip flip) {
     SDL_RenderCopyEx(Trax::renderer, texture, &source, &dest, NULL, NULL, flip);
 }
+
+void TextureManager::draw(SDL_Texture *texture, SDL_Rect source, SDL_Rect dest, double angle) {
+    SDL_RenderCopyEx(Trax::renderer, texture, &source, &dest, angle, NULL, SDL_FLIP_NONE);
+}

@@ -17,6 +17,7 @@ class TextureManager {
 public:
     static SDL_Texture *load_texture(std::string filename);
     static void draw(SDL_Texture *texture, SDL_Rect source, SDL_Rect dest, SDL_RendererFlip flip);
+    static void draw(SDL_Texture *texture, SDL_Rect source, SDL_Rect dest, double angle);
 };
 
 #endif /* TextureManager_hpp */

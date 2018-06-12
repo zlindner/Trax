@@ -10,10 +10,15 @@
 #define Keyboard_hpp
 
 #include "Component.hpp"
+#include "Transform.hpp"
+#include "Sprite.hpp"
 
 class Keyboard : public Component {
     
 public:
+    Transform *transform;
+    Sprite *sprite;
+    
     void init() override;
     void update() override;
 };

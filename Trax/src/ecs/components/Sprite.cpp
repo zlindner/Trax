@@ -55,7 +55,7 @@ void Sprite::update() {
 }
 
 void Sprite::draw() {
-    TextureManager::draw(texture, source, dest, flip);
+    TextureManager::draw(texture, source, dest, angle);
 }
 
 void Sprite::play(std::string name) {
