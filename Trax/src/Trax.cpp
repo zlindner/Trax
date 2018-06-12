@@ -11,6 +11,8 @@
 #include "Entity.hpp"
 #include "Component.hpp"
 #include "Keyboard.hpp"
+#include "Sprite.hpp"
+#include "Transform.hpp"
 
 SDL_Renderer *Trax::renderer;
 SDL_Event Trax::event;
@@ -42,7 +44,8 @@ void Trax::init() {
         is_running = false;
     }
     
-    //player.add_component<Keyboard>();
+    player.add_component<Transform>(2);
+    player.add_component<Sprite>("assets/tank.png");
 }
 
 void Trax::events() {
@@ -60,10 +63,15 @@ void Trax::events() {
 void Trax::update() {
     manager.refresh();
     manager.update();
+    
+    //TODO update colliders
 }
 
 void Trax::render() {
     SDL_RenderClear(renderer);
+    
+    //TODO grouping
+    manager.draw();
     
     SDL_RenderPresent(renderer);
 }

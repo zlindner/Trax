@@ -15,6 +15,11 @@
 		A09432C220CEF6BF0013670F /* Manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A09432C020CEF6BF0013670F /* Manager.cpp */; };
 		A09432C520CEFE5B0013670F /* ECS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A09432C320CEFE5B0013670F /* ECS.cpp */; };
 		A09432C920CF00380013670F /* Keyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A09432C720CF00380013670F /* Keyboard.cpp */; };
+		A0F928D420D0039D0032B476 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0F928D220D0039D0032B476 /* Sprite.cpp */; };
+		A0F928D720D0051A0032B476 /* TextureManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0F928D520D0051A0032B476 /* TextureManager.cpp */; };
+		A0F928DA20D008680032B476 /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0F928D820D008680032B476 /* Transform.cpp */; };
+		A0F928DD20D008890032B476 /* Vector2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0F928DB20D008890032B476 /* Vector2D.cpp */; };
+		A0F928E020D00A820032B476 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0F928DE20D00A820032B476 /* Animation.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +51,16 @@
 		A09432C420CEFE5B0013670F /* ECS.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ECS.hpp; sourceTree = "<group>"; };
 		A09432C720CF00380013670F /* Keyboard.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Keyboard.cpp; sourceTree = "<group>"; };
 		A09432C820CF00380013670F /* Keyboard.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Keyboard.hpp; sourceTree = "<group>"; };
+		A0F928D220D0039D0032B476 /* Sprite.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Sprite.cpp; sourceTree = "<group>"; };
+		A0F928D320D0039D0032B476 /* Sprite.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Sprite.hpp; sourceTree = "<group>"; };
+		A0F928D520D0051A0032B476 /* TextureManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TextureManager.cpp; sourceTree = "<group>"; };
+		A0F928D620D0051A0032B476 /* TextureManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TextureManager.hpp; sourceTree = "<group>"; };
+		A0F928D820D008680032B476 /* Transform.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Transform.cpp; sourceTree = "<group>"; };
+		A0F928D920D008680032B476 /* Transform.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Transform.hpp; sourceTree = "<group>"; };
+		A0F928DB20D008890032B476 /* Vector2D.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vector2D.cpp; sourceTree = "<group>"; };
+		A0F928DC20D008890032B476 /* Vector2D.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vector2D.hpp; sourceTree = "<group>"; };
+		A0F928DE20D00A820032B476 /* Animation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
+		A0F928DF20D00A820032B476 /* Animation.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Animation.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +110,12 @@
 				A094329820CED3A30013670F /* Main.cpp */,
 				A094329F20CED5510013670F /* Trax.cpp */,
 				A09432A020CED5510013670F /* Trax.hpp */,
+				A0F928D520D0051A0032B476 /* TextureManager.cpp */,
+				A0F928D620D0051A0032B476 /* TextureManager.hpp */,
+				A0F928DB20D008890032B476 /* Vector2D.cpp */,
+				A0F928DC20D008890032B476 /* Vector2D.hpp */,
+				A0F928DE20D00A820032B476 /* Animation.cpp */,
+				A0F928DF20D00A820032B476 /* Animation.hpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -135,6 +156,10 @@
 			children = (
 				A09432C720CF00380013670F /* Keyboard.cpp */,
 				A09432C820CF00380013670F /* Keyboard.hpp */,
+				A0F928D220D0039D0032B476 /* Sprite.cpp */,
+				A0F928D320D0039D0032B476 /* Sprite.hpp */,
+				A0F928D820D008680032B476 /* Transform.cpp */,
+				A0F928D920D008680032B476 /* Transform.hpp */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -195,12 +220,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0F928DA20D008680032B476 /* Transform.cpp in Sources */,
 				A09432C920CF00380013670F /* Keyboard.cpp in Sources */,
 				A09432BF20CEF6B80013670F /* Entity.cpp in Sources */,
 				A09432A120CED5510013670F /* Trax.cpp in Sources */,
 				A09432C220CEF6BF0013670F /* Manager.cpp in Sources */,
 				A09432C520CEFE5B0013670F /* ECS.cpp in Sources */,
+				A0F928D420D0039D0032B476 /* Sprite.cpp in Sources */,
 				A094329920CED3A30013670F /* Main.cpp in Sources */,
+				A0F928DD20D008890032B476 /* Vector2D.cpp in Sources */,
+				A0F928D720D0051A0032B476 /* TextureManager.cpp in Sources */,
+				A0F928E020D00A820032B476 /* Animation.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
