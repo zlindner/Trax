@@ -17,13 +17,13 @@
 #include "Collision.hpp"
 #include "Map.hpp"
 #include "Tile.hpp"
+#include "Tank.hpp"
 
 SDL_Renderer *Trax::renderer;
 SDL_Event Trax::event;
 
 Manager manager;
 
-auto &player(manager.add_entity());
 auto &tile(manager.add_entity());
 
 std::vector<Collider *> Trax::colliders;
@@ -63,13 +63,10 @@ void Trax::init() {
         is_running = false;
     }
     
-    Map::load_map("assets/desert.map", 32, 32);
+    Tank *tank = new Tank(manager, GROUP_PLAYER);
+    manager.add_entity(tank);
     
-    player.add_component<Transform>(2);
-    player.add_component<Sprite>("assets/tank.png");
-    player.add_component<Keyboard>();
-    player.add_component<Collider>("player");
-    player.add_group(GROUP_PLAYER);
+    //Map::load_map("assets/desert.map", 32, 32);
     
     tile.add_component<Transform>(300, 300, 300, 32, 1);
     tile.add_component<Sprite>("assets/sand.png");
@@ -92,12 +89,12 @@ void Trax::events() {
 void Trax::update() {
     manager.refresh();
     manager.update();
-    
+        
     //TODO stop collider checking against itself
-    for (auto c : colliders) {
+    /*for (auto c : colliders) {
         if (Collision::AABB(player.get_component<Collider>(), *c))
             ;
-    }
+    }*/
 }
 
 void Trax::render() {

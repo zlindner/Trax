@@ -24,7 +24,7 @@ class Entity {
 public:
     Entity(Manager &m);
     
-    void update();
+    virtual void update();
     void draw();
     
     void destroy();

@@ -25,12 +25,15 @@ public:
     
     SDL_RendererFlip flip = SDL_FLIP_NONE;
     double angle = 0.0;
+    SDL_Point origin;
     
     Sprite() = default;
     
     Sprite(std::string filename);
     
     Sprite(std::string filename, bool is_animated);
+    
+    Sprite(std::string filename, SDL_Point o);
     
     ~Sprite();
     
@@ -50,6 +53,8 @@ private:
     bool animated = false;
     int frames = 0;
     int speed = 100;
+    
+    bool default_origin = true;
 };
 
 #endif /* Sprite_hpp */

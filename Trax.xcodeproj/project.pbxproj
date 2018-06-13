@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A013C7E720D15E7600F301BA /* Tank.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A013C7E520D15E7600F301BA /* Tank.cpp */; };
 		A094329920CED3A30013670F /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A094329820CED3A30013670F /* Main.cpp */; };
 		A094329C20CED3C20013670F /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A094329B20CED3C20013670F /* SDL2.framework */; };
 		A094329E20CED3D10013670F /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A094329D20CED3D10013670F /* SDL2_image.framework */; };
@@ -38,6 +39,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A013C7E520D15E7600F301BA /* Tank.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tank.cpp; sourceTree = "<group>"; };
+		A013C7E620D15E7600F301BA /* Tank.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Tank.hpp; sourceTree = "<group>"; };
 		A094328C20CED3880013670F /* Trax */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Trax; sourceTree = BUILT_PRODUCTS_DIR; };
 		A094329820CED3A30013670F /* Main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Main.cpp; sourceTree = "<group>"; };
 		A094329B20CED3C20013670F /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 				A0F928E520D017880032B476 /* Collision.hpp */,
 				A0F928E720D01BAB0032B476 /* Map.cpp */,
 				A0F928E820D01BAB0032B476 /* Map.hpp */,
+				A013C7E520D15E7600F301BA /* Tank.cpp */,
+				A013C7E620D15E7600F301BA /* Tank.hpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 				A0F928E320D015BB0032B476 /* Collider.cpp in Sources */,
 				A0F928D420D0039D0032B476 /* Sprite.cpp in Sources */,
 				A094329920CED3A30013670F /* Main.cpp in Sources */,
+				A013C7E720D15E7600F301BA /* Tank.cpp in Sources */,
 				A0F928DD20D008890032B476 /* Vector2D.cpp in Sources */,
 				A0F928D720D0051A0032B476 /* TextureManager.cpp in Sources */,
 				A0F928E620D017880032B476 /* Collision.cpp in Sources */,

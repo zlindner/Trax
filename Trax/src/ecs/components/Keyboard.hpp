@@ -19,6 +19,8 @@ public:
     Transform *transform;
     Sprite *sprite;
     
+    const Uint8 *keystates;
+    
     void init() override;
     void update() override;
 };

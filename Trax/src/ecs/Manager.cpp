@@ -44,6 +44,11 @@ Entity &Manager::add_entity() {
     return *e;
 }
 
+void Manager::add_entity(Entity *e) {
+    std::unique_ptr<Entity> u_ptr {e};
+    entities.emplace_back(std::move(u_ptr));
+}
+
 void Manager::add_to_group(Entity *e, std::size_t g) {
     grouped_entities[g].emplace_back(e);
 }

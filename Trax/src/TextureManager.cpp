@@ -26,3 +26,7 @@ void TextureManager::draw(SDL_Texture *texture, SDL_Rect source, SDL_Rect dest, 
 void TextureManager::draw(SDL_Texture *texture, SDL_Rect source, SDL_Rect dest, double angle) {
     SDL_RenderCopyEx(Trax::renderer, texture, &source, &dest, angle, NULL, SDL_FLIP_NONE);
 }
+
+void TextureManager::draw(SDL_Texture *texture, SDL_Rect source, SDL_Rect dest, double angle, SDL_Point origin) {
+    SDL_RenderCopyEx(Trax::renderer, texture, &source, &dest, angle, &origin, SDL_FLIP_NONE);
+}

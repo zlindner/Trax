@@ -23,6 +23,7 @@ public:
     void refresh();
     
     Entity &add_entity();
+    void add_entity(Entity *e);
     
     void add_to_group(Entity *e, std::size_t g);
     std::vector<Entity *> &get_group(std::size_t g);

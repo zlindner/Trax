@@ -25,6 +25,15 @@ Sprite::Sprite(std::string filename, bool is_animated) {
     // setup animations
 }
 
+Sprite::Sprite(std::string filename, SDL_Point o) {
+    set_texture(filename);
+    
+    origin.x = o.x;
+    origin.y = o.y;
+    
+    default_origin = false;
+}
+
 Sprite::~Sprite() {
     SDL_DestroyTexture(texture);
 }
@@ -55,7 +64,11 @@ void Sprite::update() {
 }
 
 void Sprite::draw() {
-    TextureManager::draw(texture, source, dest, angle);
+    if (default_origin) {
+        TextureManager::draw(texture, source, dest, angle);
+    } else {
+        TextureManager::draw(texture, source, dest, angle, origin);
+    }
 }
 
 void Sprite::play(std::string name) {
