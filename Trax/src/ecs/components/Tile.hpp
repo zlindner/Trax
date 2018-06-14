@@ -25,9 +25,7 @@ public:
     SDL_Rect tile;
     int tile_id;
     std::string filename;
-  
-    Tile() = default;
-    
+      
     Tile(int x, int y, int width, int height, int id);
     
     void init() override;

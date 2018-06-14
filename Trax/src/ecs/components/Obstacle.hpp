@@ -19,9 +19,7 @@ class Obstacle : public Component {
 public:
     SDL_Rect obstacle;
     std::string filename;
-    
-    Obstacle() = default;
-    
+        
     Obstacle(float x, float y, int width, int height, std::string name);
     
     void init() override;

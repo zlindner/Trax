@@ -13,7 +13,6 @@
 #include <memory>
 #include <bitset>
 #include <array>
-
 #include "ECS.hpp"
 
 class Manager;

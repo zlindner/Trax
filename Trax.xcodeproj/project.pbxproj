@@ -20,7 +20,6 @@
 		A0F928D720D0051A0032B476 /* TextureManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0F928D520D0051A0032B476 /* TextureManager.cpp */; };
 		A0F928DA20D008680032B476 /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0F928D820D008680032B476 /* Transform.cpp */; };
 		A0F928DD20D008890032B476 /* Vector2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0F928DB20D008890032B476 /* Vector2D.cpp */; };
-		A0F928E020D00A820032B476 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0F928DE20D00A820032B476 /* Animation.cpp */; };
 		A0F928E320D015BB0032B476 /* Collider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0F928E120D015BB0032B476 /* Collider.cpp */; };
 		A0F928E620D017880032B476 /* Collision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0F928E420D017880032B476 /* Collision.cpp */; };
 		A0F928E920D01BAB0032B476 /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0F928E720D01BAB0032B476 /* Map.cpp */; };
@@ -74,8 +73,6 @@
 		A0F928D920D008680032B476 /* Transform.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Transform.hpp; sourceTree = "<group>"; };
 		A0F928DB20D008890032B476 /* Vector2D.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vector2D.cpp; sourceTree = "<group>"; };
 		A0F928DC20D008890032B476 /* Vector2D.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vector2D.hpp; sourceTree = "<group>"; };
-		A0F928DE20D00A820032B476 /* Animation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
-		A0F928DF20D00A820032B476 /* Animation.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Animation.hpp; sourceTree = "<group>"; };
 		A0F928E120D015BB0032B476 /* Collider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Collider.cpp; sourceTree = "<group>"; };
 		A0F928E220D015BB0032B476 /* Collider.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Collider.hpp; sourceTree = "<group>"; };
 		A0F928E420D017880032B476 /* Collision.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Collision.cpp; sourceTree = "<group>"; };
@@ -150,8 +147,6 @@
 				A0F928D620D0051A0032B476 /* TextureManager.hpp */,
 				A0F928DB20D008890032B476 /* Vector2D.cpp */,
 				A0F928DC20D008890032B476 /* Vector2D.hpp */,
-				A0F928DE20D00A820032B476 /* Animation.cpp */,
-				A0F928DF20D00A820032B476 /* Animation.hpp */,
 				A0F928E420D017880032B476 /* Collision.cpp */,
 				A0F928E520D017880032B476 /* Collision.hpp */,
 				A0F928E720D01BAB0032B476 /* Map.cpp */,
@@ -283,7 +278,6 @@
 				A0F928DD20D008890032B476 /* Vector2D.cpp in Sources */,
 				A0F928D720D0051A0032B476 /* TextureManager.cpp in Sources */,
 				A0F928E620D017880032B476 /* Collision.cpp in Sources */,
-				A0F928E020D00A820032B476 /* Animation.cpp in Sources */,
 				A0F928EC20D01CEF0032B476 /* Tile.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,19 +9,17 @@
 #ifndef Keyboard_hpp
 #define Keyboard_hpp
 
+#include <SDL2/SDL.h>
 #include "Component.hpp"
-#include "Transform.hpp"
-#include "Sprite.hpp"
 
 class Keyboard : public Component {
     
 public:
-    Transform *transform;
-    Sprite *sprite;
-    
     const Uint8 *keystates;
     
-    void init() override;
+    /**
+     * Updates the keystates for all keys
+     */
     void update() override;
 };
 
