@@ -10,15 +10,10 @@
 #include "Manager.hpp"
 #include "Entity.hpp"
 #include "Component.hpp"
-#include "Keyboard.hpp"
-#include "Sprite.hpp"
-#include "Transform.hpp"
 #include "Collider.hpp"
 #include "Collision.hpp"
 #include "Map.hpp"
-#include "Tile.hpp"
 #include "Tank.hpp"
-#include "Obstacle.hpp"
 
 SDL_Renderer *Trax::renderer;
 SDL_Event Trax::event;
@@ -29,15 +24,9 @@ std::vector<Collider *> Trax::colliders;
 
 Tank *tank;
 
-enum groups : std::size_t {
-    GROUP_TILE,
-    GROUP_OBSTACLE,
-    GROUP_PLAYER
-};
-
-auto &tiles(manager.get_group(GROUP_TILE));
-auto &obstacles(manager.get_group(GROUP_OBSTACLE));
-auto &players(manager.get_group(GROUP_PLAYER));
+auto &tiles(manager.get_group(Trax::TILE));
+auto &obstacles(manager.get_group(Trax::OBSTACLE));
+auto &tanks(manager.get_group(Trax::TANK));
 
 Trax::Trax() {
     
@@ -65,9 +54,9 @@ void Trax::init() {
         is_running = false;
     }
     
-    Map::load("assets/map/map.json");
+    Map::load("assets/map/map.json", manager);
     
-    tank = new Tank(manager, GROUP_PLAYER);
+    tank = new Tank(manager);
     manager.add_entity(tank);
 }
 
@@ -95,6 +84,7 @@ void Trax::update() {
             continue;
         }
         
+        //TODO redo collision -> rotated rects
         if (Collision::AABB(tank->get_component<Collider>(), *c)) {
             tank->get_component<Transform>().pos = tank_pos;
         }
@@ -112,8 +102,8 @@ void Trax::render() {
         o->draw();
     }
     
-    for (auto &p : players) {
-        p->draw();
+    for (auto &t : tanks) {
+        t->draw();
     }
     
     SDL_RenderPresent(renderer);
@@ -127,16 +117,4 @@ void Trax::clean() {
 
 bool Trax::running() {
     return is_running;
-}
-
-void Trax::add_tile(int x, int y, int width, int height, int id) {
-    auto &tile(manager.add_entity());
-    tile.add_component<Tile>(x, y, width, height, id);
-    tile.add_group(GROUP_TILE);
-}
-
-void Trax::add_obstacle(float x, float y, int width, int height, std::string name) {
-    auto &obstacle(manager.add_entity());
-    obstacle.add_component<Obstacle>(x, y, width, height, name);
-    obstacle.add_group(GROUP_OBSTACLE);
 }

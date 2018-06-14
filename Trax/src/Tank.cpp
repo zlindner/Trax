@@ -15,13 +15,15 @@
 #include "Collider.hpp"
 #include "Vector2D.hpp"
 
-Tank::Tank(Manager &m, std::size_t g) : Entity(m) {
+//TODO needs rewrite
+//TODO possibly move barrel and tracks to separate class
+Tank::Tank(Manager &m) : Entity(m) {
     pos = Vector2D(100, 100);
     size = Vector2D(83, 78);
     vel.zero();
     rotation = 180.0;
     
-    add_group(g); // move to entity class?
+    add_group(Trax::TANK);
     
     add_component<Transform>(pos.x, pos.y, size.x, size.y, 1);
     transform = &get_component<Transform>();
@@ -48,7 +50,7 @@ Tank::Tank(Manager &m, std::size_t g) : Entity(m) {
     
     barrel->add_component<Sprite>("assets/textures/barrel_black.png", b_origin);
     
-    barrel->add_group(g);
+    barrel->add_group(Trax::TANK);
 }
 
 Tank::~Tank() {

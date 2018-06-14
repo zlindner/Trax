@@ -17,6 +17,12 @@
 class Trax {
 
 public:
+    typedef enum group {
+        TILE,
+        OBSTACLE,
+        TANK
+    } RENDER_GROUP;
+    
     static SDL_Renderer *renderer;
     static SDL_Event event;
     
@@ -32,9 +38,6 @@ public:
     void clean();
     
     bool running();
-    
-    static void add_tile(int x, int y, int width, int height, int id);
-    static void add_obstacle(float x, float y, int width, int height, std::string name);
     
 private:
     SDL_Window *window;

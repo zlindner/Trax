@@ -21,7 +21,7 @@ class Collider;
 class Tank : public Entity {
     
 public:
-    Tank(Manager &m, std::size_t g);
+    Tank(Manager &m);
     
     ~Tank();
     
