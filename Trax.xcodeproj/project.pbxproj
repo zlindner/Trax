@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A013C7E720D15E7600F301BA /* Tank.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A013C7E520D15E7600F301BA /* Tank.cpp */; };
+		A01A53EC20D2B5E100EABE89 /* Obstacle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A01A53EA20D2B5E100EABE89 /* Obstacle.cpp */; };
 		A094329920CED3A30013670F /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A094329820CED3A30013670F /* Main.cpp */; };
 		A094329C20CED3C20013670F /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A094329B20CED3C20013670F /* SDL2.framework */; };
 		A094329E20CED3D10013670F /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A094329D20CED3D10013670F /* SDL2_image.framework */; };
@@ -41,6 +42,15 @@
 /* Begin PBXFileReference section */
 		A013C7E520D15E7600F301BA /* Tank.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tank.cpp; sourceTree = "<group>"; };
 		A013C7E620D15E7600F301BA /* Tank.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Tank.hpp; sourceTree = "<group>"; };
+		A01A53E420D2ADC100EABE89 /* barrel_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barrel_black.png; sourceTree = "<group>"; };
+		A01A53E520D2ADC100EABE89 /* grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass.png; sourceTree = "<group>"; };
+		A01A53E620D2ADC100EABE89 /* map */ = {isa = PBXFileReference; lastKnownFileType = folder; path = map; sourceTree = "<group>"; };
+		A01A53E720D2ADC100EABE89 /* sand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sand.png; sourceTree = "<group>"; };
+		A01A53E820D2ADC100EABE89 /* tank_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tank_black.png; sourceTree = "<group>"; };
+		A01A53E920D2ADC100EABE89 /* dirt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dirt.png; sourceTree = "<group>"; };
+		A01A53EA20D2B5E100EABE89 /* Obstacle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Obstacle.cpp; sourceTree = "<group>"; };
+		A01A53EB20D2B5E100EABE89 /* Obstacle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Obstacle.hpp; sourceTree = "<group>"; };
+		A01A53EE20D2B90100EABE89 /* sandbag_beige.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sandbag_beige.png; sourceTree = "<group>"; };
 		A094328C20CED3880013670F /* Trax */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Trax; sourceTree = BUILT_PRODUCTS_DIR; };
 		A094329820CED3A30013670F /* Main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Main.cpp; sourceTree = "<group>"; };
 		A094329B20CED3C20013670F /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
@@ -89,6 +99,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A01A53ED20D2B7FD00EABE89 /* textures */ = {
+			isa = PBXGroup;
+			children = (
+				A01A53EE20D2B90100EABE89 /* sandbag_beige.png */,
+				A01A53E820D2ADC100EABE89 /* tank_black.png */,
+				A01A53E720D2ADC100EABE89 /* sand.png */,
+				A01A53E520D2ADC100EABE89 /* grass.png */,
+				A01A53E920D2ADC100EABE89 /* dirt.png */,
+				A01A53E420D2ADC100EABE89 /* barrel_black.png */,
+			);
+			path = textures;
+			sourceTree = "<group>";
+		};
 		A094328320CED3880013670F = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +165,8 @@
 		A094329720CED3970013670F /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				A01A53E620D2ADC100EABE89 /* map */,
+				A01A53ED20D2B7FD00EABE89 /* textures */,
 			);
 			path = assets;
 			sourceTree = "<group>";
@@ -182,6 +207,8 @@
 				A0F928E220D015BB0032B476 /* Collider.hpp */,
 				A0F928EA20D01CEF0032B476 /* Tile.cpp */,
 				A0F928EB20D01CEF0032B476 /* Tile.hpp */,
+				A01A53EA20D2B5E100EABE89 /* Obstacle.cpp */,
+				A01A53EB20D2B5E100EABE89 /* Obstacle.hpp */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -252,6 +279,7 @@
 				A0F928D420D0039D0032B476 /* Sprite.cpp in Sources */,
 				A094329920CED3A30013670F /* Main.cpp in Sources */,
 				A013C7E720D15E7600F301BA /* Tank.cpp in Sources */,
+				A01A53EC20D2B5E100EABE89 /* Obstacle.cpp in Sources */,
 				A0F928DD20D008890032B476 /* Vector2D.cpp in Sources */,
 				A0F928D720D0051A0032B476 /* TextureManager.cpp in Sources */,
 				A0F928E620D017880032B476 /* Collision.cpp in Sources */,
@@ -380,6 +408,11 @@
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-I/usr/local/Cellar/nlohmann_json/3.1.2/include",
+				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -392,6 +425,11 @@
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-I/usr/local/Cellar/nlohmann_json/3.1.2/include",
+				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

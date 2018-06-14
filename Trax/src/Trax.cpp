@@ -18,27 +18,26 @@
 #include "Map.hpp"
 #include "Tile.hpp"
 #include "Tank.hpp"
+#include "Obstacle.hpp"
 
 SDL_Renderer *Trax::renderer;
 SDL_Event Trax::event;
 
 Manager manager;
 
-auto &tile(manager.add_entity());
-
 std::vector<Collider *> Trax::colliders;
 
+Tank *tank;
+
 enum groups : std::size_t {
-    GROUP_MAP,
-    GROUP_PLAYER,
-    GROUP_ENEMY,
-    GROUP_COLLIDER
+    GROUP_TILE,
+    GROUP_OBSTACLE,
+    GROUP_PLAYER
 };
 
-auto &tiles(manager.get_group(GROUP_MAP));
+auto &tiles(manager.get_group(GROUP_TILE));
+auto &obstacles(manager.get_group(GROUP_OBSTACLE));
 auto &players(manager.get_group(GROUP_PLAYER));
-auto &enemies(manager.get_group(GROUP_ENEMY));
-auto &colliders(manager.get_group(GROUP_COLLIDER));
 
 Trax::Trax() {
     
@@ -50,12 +49,15 @@ Trax::~Trax() {
 
 void Trax::init() {
     if (SDL_Init(SDL_INIT_EVERYTHING) == 0) {
-        window = SDL_CreateWindow("Trax", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, 0);
+        window = SDL_CreateWindow("Trax", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1024, 1024, 0);
         
         renderer = SDL_CreateRenderer(window, -1, 0);
         
         if (renderer) {
             SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+            
+            // render hints
+            SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
         }
         
         is_running = true;
@@ -63,15 +65,10 @@ void Trax::init() {
         is_running = false;
     }
     
-    Tank *tank = new Tank(manager, GROUP_PLAYER);
+    Map::load("assets/map/map.json");
+    
+    tank = new Tank(manager, GROUP_PLAYER);
     manager.add_entity(tank);
-    
-    //Map::load_map("assets/desert.map", 32, 32);
-    
-    tile.add_component<Transform>(300, 300, 300, 32, 1);
-    tile.add_component<Sprite>("assets/sand.png");
-    tile.add_component<Collider>("floor");
-    tile.add_group(GROUP_MAP);
 }
 
 void Trax::events() {
@@ -89,12 +86,17 @@ void Trax::events() {
 void Trax::update() {
     manager.refresh();
     manager.update();
+    
+    //TODO create separate vector for obstacles? don't add tank to vector?
+    for (auto c : colliders) {
+        if (c->tag == "tank") {
+            continue;
+        }
         
-    //TODO stop collider checking against itself
-    /*for (auto c : colliders) {
-        if (Collision::AABB(player.get_component<Collider>(), *c))
-            ;
-    }*/
+        if (Collision::AABB(tank->get_component<Collider>(), *c)) {
+            tank->get_component<Transform>().vel *= Vector2D(-1, -1);
+        }
+    }
 }
 
 void Trax::render() {
@@ -104,12 +106,12 @@ void Trax::render() {
         t->draw();
     }
     
-    for (auto &p : players) {
-        p->draw();
+    for (auto &o : obstacles) {
+        o->draw();
     }
     
-    for (auto &e : enemies) {
-        e->draw();
+    for (auto &p : players) {
+        p->draw();
     }
     
     SDL_RenderPresent(renderer);
@@ -125,8 +127,14 @@ bool Trax::running() {
     return is_running;
 }
 
-void Trax::add_tile(int id, int x, int y) {
+void Trax::add_tile(int x, int y, int width, int height, int id) {
     auto &tile(manager.add_entity());
-    tile.add_component<Tile>(x, y, 32, 32, id);
-    tile.add_group(GROUP_MAP);
+    tile.add_component<Tile>(x, y, width, height, id);
+    tile.add_group(GROUP_TILE);
+}
+
+void Trax::add_obstacle(float x, float y, int width, int height, std::string name) {
+    auto &obstacle(manager.add_entity());
+    obstacle.add_component<Obstacle>(x, y, width, height, name);
+    obstacle.add_group(GROUP_OBSTACLE);
 }

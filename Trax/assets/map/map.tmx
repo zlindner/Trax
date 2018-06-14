@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.5" orientation="orthogonal" renderorder="right-down" width="8" height="8" tilewidth="128" tileheight="128" infinite="0" nextobjectid="14">
+ <tileset firstgid="1" source="tileset.tsx"/>
+ <layer name="tiles" width="8" height="8">
+  <data encoding="csv">
+3,3,3,3,3,3,3,3,
+3,3,3,3,3,3,3,3,
+3,3,3,3,3,3,3,3,
+3,3,3,3,3,3,3,3,
+3,3,3,3,3,3,3,3,
+3,3,3,3,3,3,3,3,
+3,3,3,3,3,3,3,3,
+3,3,3,3,3,3,3,3
+</data>
+ </layer>
+ <objectgroup name="obstacles">
+  <object id="12" name="sandbag_beige" gid="4" x="85.505" y="366.88" width="66" height="44"/>
+ </objectgroup>
+</map>

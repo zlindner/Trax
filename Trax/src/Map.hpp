@@ -10,6 +10,9 @@
 #define Map_hpp
 
 #include <string>
+#include <nlohmann/json.hpp>
+
+using json = nlohmann::json;
 
 class Map {
     
@@ -18,7 +21,11 @@ public:
     
     ~Map();
     
-    static void load_map(std::string filename, int width, int height);
+    static void load(std::string filename);
+    
+private:
+    static void load_tiles(json j);
+    static void load_obstacles(json j);
 };
 
 #endif /* Map_hpp */

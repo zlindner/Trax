@@ -17,7 +17,19 @@ Tile::Tile(int x, int y, int width, int height, int id) {
     tile.h = height;
     tile_id = id;
     
-    filename = "assets/sand.png";
+    switch(id) {
+        case 1:
+            filename = "assets/textures/dirt.png";
+            break;
+        case 2:
+            filename = "assets/textures/grass.png";
+            break;
+        case 3:
+            filename = "assets/textures/sand.png";
+            break;
+        default:
+            break;
+    }    
 }
 
 void Tile::init() {

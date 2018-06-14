@@ -26,7 +26,7 @@ Tank::Tank(Manager &m, std::size_t g) : Entity(m) {
     add_component<Transform>(pos.x, pos.y, size.x, size.y, 1);
     transform = &get_component<Transform>();
     
-    add_component<Sprite>("assets/tank_black.png");
+    add_component<Sprite>("assets/textures/tank_black.png");
     sprite = &get_component<Sprite>();
     
     add_component<Keyboard>();
@@ -39,14 +39,14 @@ Tank::Tank(Manager &m, std::size_t g) : Entity(m) {
     m.add_entity(barrel);
     
     barrel->add_component<Transform>(0, 0, 24, 58, 1);
-    (barrel->get_component<Transform>()).pos.x = pos.x + size.x / 2 - barrel->get_component<Transform>().width / 2;
-    (barrel->get_component<Transform>()).pos.y = pos.y + size.y / 3;
+    barrel->get_component<Transform>().pos.x = pos.x + size.x / 2 - barrel->get_component<Transform>().width / 2;
+    barrel->get_component<Transform>().pos.y = pos.y + size.y / 3;
     
     SDL_Point b_origin;
     b_origin.x = barrel->get_component<Transform>().width / 2;
     b_origin.y = 10;
     
-    barrel->add_component<Sprite>("assets/barrel_black.png", b_origin);
+    barrel->add_component<Sprite>("assets/textures/barrel_black.png", b_origin);
     
     barrel->add_group(g);
 }
@@ -67,6 +67,8 @@ void Tank::update() {
     
     // update barrel
     barrel->get_component<Transform>().vel = vel;
+    barrel->get_component<Transform>().pos.x = pos.x + size.x / 2 - barrel->get_component<Transform>().width / 2;
+    barrel->get_component<Transform>().pos.y = pos.y + size.y / 3;
     barrel->get_component<Sprite>().angle = rotation + 180;
 }
 

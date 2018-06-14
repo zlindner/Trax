@@ -33,7 +33,8 @@ public:
     
     bool running();
     
-    static void add_tile(int id, int x, int y);
+    static void add_tile(int x, int y, int width, int height, int id);
+    static void add_obstacle(float x, float y, int width, int height, std::string name);
     
 private:
     SDL_Window *window;
