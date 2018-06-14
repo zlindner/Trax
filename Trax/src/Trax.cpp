@@ -84,6 +84,8 @@ void Trax::events() {
 }
 
 void Trax::update() {
+    Vector2D tank_pos = tank->get_component<Transform>().pos;
+    
     manager.refresh();
     manager.update();
     
@@ -94,7 +96,7 @@ void Trax::update() {
         }
         
         if (Collision::AABB(tank->get_component<Collider>(), *c)) {
-            tank->get_component<Transform>().vel *= Vector2D(-1, -1);
+            tank->get_component<Transform>().pos = tank_pos;
         }
     }
 }

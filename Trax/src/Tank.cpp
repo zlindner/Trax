@@ -16,7 +16,7 @@
 #include "Vector2D.hpp"
 
 Tank::Tank(Manager &m, std::size_t g) : Entity(m) {
-    pos.zero();
+    pos = Vector2D(100, 100);
     size = Vector2D(83, 78);
     vel.zero();
     rotation = 180.0;
@@ -66,15 +66,15 @@ void Tank::update() {
     pos = transform->pos;
     
     // update barrel
-    barrel->get_component<Transform>().vel = vel;
     barrel->get_component<Transform>().pos.x = pos.x + size.x / 2 - barrel->get_component<Transform>().width / 2;
     barrel->get_component<Transform>().pos.y = pos.y + size.y / 3;
-    barrel->get_component<Sprite>().angle = rotation + 180;
+    //barrel->get_component<Sprite>().angle = rotation + 180;
 }
 
 void Tank::get_input() {
     const Uint8 *keystates = keyboard->keystates;
     
+    // tank
     if (!keystates[SDL_SCANCODE_W] && !keystates[SDL_SCANCODE_S]) {
         vel.zero();
     }
@@ -89,11 +89,24 @@ void Tank::get_input() {
     }
     
     if (keystates[SDL_SCANCODE_S]) {
-        vel.x = sin(rotation * -0.0174532925);
-        vel.y = cos(rotation * -0.0174532925);
+        vel.x = sin(rotation * -0.0174532925) * 0.75;
+        vel.y = cos(rotation * -0.0174532925) * 0.75;
     }
     
     if (keystates[SDL_SCANCODE_D]) {
         rotation += 2;
+    }
+    
+    // barrel
+    if (keystates[SDL_SCANCODE_Q]) {
+        barrel->get_component<Sprite>().angle -= 2;
+    }
+    
+    if (keystates[SDL_SCANCODE_E]) {
+        barrel->get_component<Sprite>().angle += 2;
+    }
+    
+    if (keystates[SDL_SCANCODE_SPACE]) {
+        std::cout << "bang\n";
     }
 }

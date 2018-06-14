@@ -24,7 +24,6 @@ void TextureManager::draw(SDL_Texture *texture, SDL_Rect source, SDL_Rect dest, 
 }
 
 void TextureManager::draw(SDL_Texture *texture, SDL_Rect source, SDL_Rect dest, double angle) {
-    //SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "0");
     SDL_RenderCopyEx(Trax::renderer, texture, &source, &dest, angle, NULL, SDL_FLIP_NONE);
 }
 

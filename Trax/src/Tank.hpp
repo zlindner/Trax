@@ -41,6 +41,7 @@ private:
     double rotation;
     
     Entity *barrel;
+    Entity *tracks;
 };
 
 #endif /* Tank_hpp */
